@@ -43,14 +43,14 @@ price
 
 
 cursor.execute("SELECT AVG(HireDate - BirthDate) FROM Employee;");
-print(f"The Average age of employee hire is {cursor.fetchall()[0][0]} rows")
+print(f"The Average age of employee hire is {cursor.fetchall()[0][0]} years")
 
 
 # In[89]:
 
 
 cursor.execute("SELECT City, AVG(HireDate - BirthDate) FROM Employee GROUP BY CITY ;");
-print(f"The Average age of employee hire by city is {cursor.fetchall()} rows")
+print(f"The Average age of employee hire by city is {cursor.fetchall()} ")
 
 
 # # Part 3
