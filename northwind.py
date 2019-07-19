@@ -70,11 +70,11 @@ price = cursor.execute("SELECT CompanyName, ProductName, UnitPrice FROM Product 
 price
 
 
-# In[98]:
+# In[120]:
 
 
-top =cursor.execute("SELECT CategoryName, MAX(DISTINCT CategoryId) FROM Product JOIN Category ON Product.CategoryId = Category.Id").fetchall()
-
+top =cursor.execute("SELECT CategoryName, COUNT(CategoryId) AS MOST_FREQUENT FROM Product JOIN Category ON Product.CategoryId = Category.Id GROUP BY CategoryName ORDER BY COUNT(CategoryName) DESC").fetchall()
+top
 print(f"The largest category by number of unique items in it is {top[0][0]}")
 
 
